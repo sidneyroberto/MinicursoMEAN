@@ -1,0 +1,18 @@
+{
+  "name": "livraria",
+  "version": "1.0.0",
+  "description": "Exemplo para a turma de LP4",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "express-load": "^1.1.15",
+    "method-override": "^2.3.8",
+    "mongoose": "^4.9.2"
+  }
+}

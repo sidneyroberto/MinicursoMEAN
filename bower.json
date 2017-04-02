@@ -1,0 +1,22 @@
+{
+  "name": "livraria",
+  "description": "Exemplo para a turma de LP4",
+  "main": "index.js",
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-route": "^1.6.4",
+    "angular-resource": "^1.6.4",
+    "bootstrap": "^3.3.7"
+  }
+}

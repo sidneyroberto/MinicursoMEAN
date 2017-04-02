@@ -1,0 +1,47 @@
+<div class="jumbotron">
+	<h1 class="text-center">Livraria</h1>
+<div>
+
+<p class="text-center" ng-show="mensagem.texto">{{mensagem.texto}}</p>
+    
+<div class="row">
+	<div class="col-lg-8 col-lg-offset-2">
+		<div class="input-group">
+			<span class="input-group-btn">
+				<a href="#!/livro" class="btn btn-primary">Novo livro</a>
+			</span>
+			<input ng-model="filtro" type="search" class="form-control" placeholder="Digite parte do título do livro">
+		</div>
+	</div>
+</div>
+
+<h4 class="text-center"  ng-hide="livros.length">Nenhum livro no estoque</h4>
+
+<h4 class="text-center"  ng-show="livros.length">{{livros.length}} títulos em estoque</h4>
+<br/>
+
+<div ng-show="livros.length" class="table-responsive">
+	<table	class="table table-hover">
+		<tr>
+			<th	class="text-center">Título</th>
+			<th	class="text-center">Autor</th>
+            <th	class="text-center">Nro. páginas</th>
+			<th	class="text-center">Qtde. estoque</th>
+			<th	class="text-center">Preço unitário</th>
+			<th	class="text-center">Ações</th>
+		</tr>
+		<tr ng-repeat="livro in livros | filter: filtro">
+			<td	class="text-center">{{livro.titulo}}</td>
+			<td	class="text-center">{{livro.autor}}</td>
+            <td	class="text-center">{{livro.numeroPaginas}}</td>
+			<td	class="text-center">{{livro.quantidadeEmEstoque}}</td>
+			<td	class="text-center">{{livro.precoUnitario}}</td>
+			<td	class="text-center">
+                <a href="#!/livro/{{livro._id}}" class="btn">
+                    <span class="glyphicon glyphicon-edit"></span> 
+                </a>
+                <button ng-click="remove(livro)" class="btn btn-link glyphicon glyphicon-trash"></button>
+			</td>
+		</tr>
+	</table>
+</div>

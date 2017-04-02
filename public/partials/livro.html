@@ -1,0 +1,37 @@
+<h1 class="text-center">{{tituloPagina}}</h1>
+
+<div ng-show="mensagem.sucesso" class="alert alert-success">
+	<p ng-show="mensagem.texto">{{mensagem.texto}}</p>
+</div>
+
+<div ng-show="mensagem.sucesso == false" class="alert alert-danger">
+	<p ng-show="mensagem.texto">{{mensagem.texto}}</p>
+</div>
+
+<form ng-submit="salva()">
+    <div class="form-group">
+		<label for="titulo">Título</label>
+		<input type="text" class="form-control" id="titulo" name="titulo" required ng-model="livro.titulo"/>
+	</div>
+    <div class="form-group">
+		<label for="titulo">Autor</label>
+		<input type="text" class="form-control" id="autor" name="autor" required ng-model="livro.autor"/>
+	</div>
+    <div class="form-group">
+		<label for="numeroPaginas">Número de páginas</label>
+		<input type="number" min="0" step="1" class="form-control" id="numeroPaginas" name="numeroPaginas" ng-pattern="{{validaInteiro}}" required ng-pattern="{{validaInteiros}}" ng-model="livro.numeroPaginas"/>
+	</div>
+    <div class="form-group">
+		<label for="quantidadeEmEstoque">Quantidade em estoque</label>
+		<input type="number" min="0" step="1" class="form-control" id="quantidadeEmEstoque" name="quantidadeEmEstoque" ng-pattern="{{validaInteiro}}" required ng-model="livro.quantidadeEmEstoque"/>
+	</div>
+    <div class="form-group">
+		<label for="precoUnitario">Preço unitário</label>
+		<input type="number" min="0" step="0.01" class="form-control" id="precoUnitario" name="precoUnitario" required 
+               ng-model="livro.precoUnitario"/>
+	</div>
+    <div>
+		<input type="submit" class="btn btn-primary" value="Salvar"/>
+		<a	href="#!/" class="btn btn-default">Voltar</a>
+	</div>
+</form>
